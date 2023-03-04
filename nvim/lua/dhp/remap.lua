@@ -6,10 +6,10 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- General Keymaps
 ---------------------
 
--- use jk to exit insert mode
+-- Use jk to exit insert mode
 vim.keymap.set("i", "jk", "<ESC>")
 
--- clear search highlight
+-- Clear search highlight
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 -- delete single character without copying into register
@@ -62,40 +62,33 @@ vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find stri
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 
--- telescope git commands (not on youtube nvim video)
+-- Telescope Git Commands
 vim.keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
 vim.keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
 vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
--- restart lsp server (not on youtube nvim video)
+-- Restart LSP server
 vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
--- greatest remap ever
--- foo
--- bar
--- Imagine if we wanted to highlight 'foo' and copy it then paste it over 'bar' — without this remapping, any "pastes" after the one to overwrite bar would be 'bar' because bar was deleted and then stored within our paste registrar — this will allow us to maintain foo as our paste instead if we intend on pasting it again elsewhere
+-- Use <leader>p when you want to save the copied content instead of getting the content that you use that copied content to overwrite
+-- Example: copying 'foo' to paste over 'bar' will result in 'bar' being stored in your register
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
--- next greatest remap ever : asbjornHaland
--- leader y will yank things to your system register as opposed to your vim register
--- this means that you can then paste it using command-V instead of 'p'
+-- Yank/Delete => System Register (content can then be pasted using <Cmd><p>)
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- This does the same as the above except copies deleted content to your system register
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
--- This is going to get me cancelled (Something about saving vertically in edit mode? Only enable commands that you understand so come back to this when it makes sense to you)
--- vim.keymap.set("i", "<C-c>", "<Esc>")
-
--- Prevents you from pressing capital Q in normal mode? For whatever reason? Research what capital Q does using vim --help
+-- Prevents you from pressing capital Q in normal mode
 vim.keymap.set("n", "Q", "<nop>")
 
 -- Control+F will allow you to switch projects easily ... does not work because we don't have tmux yet? Disable until we figure it out but it could be very helpful...
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- vim.keymap.set("n", "<leader>f", function()
---	vim.lsp.buf.format()
+--   vim.lsp.buf.format()
 -- end)
 
 -- Quickfix navigation - look this up then activate
