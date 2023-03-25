@@ -75,7 +75,7 @@ return require("packer").startup(function(use)
   -- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting perfomance
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
-  use({ "nvim-telescope/telescope-ui-select.nvim" }) -- for showing lsp code actions
+  -- use({ "nvim-telescope/telescope-ui-select.nvim" }) -- for showing lsp code actions
 
   -- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
@@ -95,6 +95,16 @@ return require("packer").startup(function(use)
   use("neovim/nvim-lspconfig") -- easily configure language servers
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
   -- use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    requires = {
+      { "nvim-tree/nvim-web-devicons" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+  }) -- enhancing the lsp ui's
+
   use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (i.e. rename file & update exports)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
@@ -133,6 +143,8 @@ return require("packer").startup(function(use)
     end,
     ft = { "markdown" },
   })
+
+  use("karb94/neoscroll.nvim")
 
   if packer_bootstrap then
     require("packer").sync()

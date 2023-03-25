@@ -135,6 +135,11 @@ _G.packer_plugins = {
     path = "/Users/dillon/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
     url = "https://github.com/onsails/lspkind.nvim"
   },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/Users/dillon/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/dillon/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -161,6 +166,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dillon/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/Users/dillon/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -225,11 +235,6 @@ _G.packer_plugins = {
     path = "/Users/dillon/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
-  ["telescope-ui-select.nvim"] = {
-    loaded = true,
-    path = "/Users/dillon/.local/share/nvim/site/pack/packer/start/telescope-ui-select.nvim",
-    url = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/dillon/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -262,14 +267,14 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
--- Config for: inc-rename.nvim
-time([[Config for inc-rename.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15inc_rename\frequire\0", "config", "inc-rename.nvim")
-time([[Config for inc-rename.nvim]], false)
 -- Config for: rose-pine
 time([[Config for rose-pine]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
 time([[Config for rose-pine]], false)
+-- Config for: inc-rename.nvim
+time([[Config for inc-rename.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15inc_rename\frequire\0", "config", "inc-rename.nvim")
+time([[Config for inc-rename.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]

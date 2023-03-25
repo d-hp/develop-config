@@ -11,10 +11,10 @@ if not actions_setup then
 end
 
 -- import telescope-ui-select safely
-local themes_setup, themes = pcall(require, "telescope.themes")
-if not themes_setup then
-  return
-end
+-- local themes_setup, themes = pcall(require, "telescope.themes")
+-- if not themes_setup then
+--   return
+-- end
 
 -- configure telescope
 telescope.setup({
@@ -28,12 +28,12 @@ telescope.setup({
       },
     },
   },
-  extensions = {
-    ["ui-select"] = {
-      themes.get_dropdown({}),
-    },
-  },
+  -- extensions = {
+  --   ["ui-select"] = {
+  --     themes.get_dropdown({}),
+  --   },
+  -- },
 })
 
 telescope.load_extension("fzf")
-telescope.load_extension("ui-select")
+-- telescope.load_extension("ui-select")
