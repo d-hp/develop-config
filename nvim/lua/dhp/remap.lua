@@ -100,5 +100,8 @@ vim.keymap.set("n", "Q", "<nop>")
 -- Leader + s will select the word that you are on and immediately allow you to change it
 vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- <leader>sl will select & substitute current line
+vim.keymap.set("n", "<leader>sl", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
 -- If you create documents that have terminal commands within them and then use leader x, you can make that file (with shell commands inside of it) executable — reactivate this when you get a bit more advanced
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent )

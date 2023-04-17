@@ -63,6 +63,16 @@ return require("packer").startup(function(use)
   -- commenting with gc (NB: gcc, gc9j, etc.)
   use("numToStr/Comment.nvim")
 
+  -- floating terminal
+  -- use({
+  --   "voldikss/vim-floaterm",
+  --   keys = "<C-\\>",
+  --   cmd = {
+  --     "FloatermNew",
+  --     "FloatermToggle",
+  --   },
+  -- })
+
   -- file explorer
   use("nvim-tree/nvim-tree.lua")
 
@@ -144,7 +154,76 @@ return require("packer").startup(function(use)
     ft = { "markdown" },
   })
 
-  use("karb94/neoscroll.nvim")
+  -- use("karb94/neoscroll.nvim")
+
+  -- use({
+  --   "glepnir/dashboard-nvim",
+  --   event = "VimEnter",
+  --   config = function()
+  --     require("dashboard").setup({
+  --       theme = "doom",
+  --       preview = {
+  --         file_height = 12,
+  --         file_width = 80,
+  --       },
+  --       config = {
+  --         center = {
+  --           {
+  --             icon = "  ",
+  --             icon_hl = "DashboardCenter1Icon",
+  --             desc = "finder                           ",
+  --             key = "~",
+  --             key_hl = "DashboardCenter1Icon",
+  --             action = "Telescope find_files find_command=rg,--hidden,--files",
+  --           },
+  --           {
+  --             icon = "  ",
+  --             icon_hl = "DashboardCenter1Icon",
+  --             desc = "notes                            ",
+  --             key = "~",
+  --             key_hl = "DashboardCenter1Icon",
+  --             action = ":e ~/Documents/vimnotes.md",
+  --           },
+  --           {
+  --             icon = "  ",
+  --             icon_hl = "DashboardCenter1Icon",
+  --             desc = "dots                             ",
+  --             key = "~",
+  --             key_hl = "DashboardCenter1Icon",
+  --             action = "Telescope find_files cwd=~/.config",
+  --           },
+  --           {
+  --             icon = "  ",
+  --             icon_hl = "DashboardCenter1Icon",
+  --             desc = "exit                             ",
+  --             key = "~",
+  --             key_hl = "DashboardCenter1Icon",
+  --             action = "qa",
+  --           },
+  --         },
+  --         header = {
+  --           [[                               ]],
+  --           [[                               ]],
+  --           [[                               ]],
+  --           [[                               ]],
+  --           [[                               ]],
+  --           [[                               ]],
+  --           [[                               ]],
+  --           [[   ▄████▄              ▒▒▒▒▒   ]],
+  --           [[  ███▄█▀              ▒ ▄▒ ▄▒  ]],
+  --           [[ ▐████     █  █  █   ▒▒▒▒▒▒▒▒▒ ]],
+  --           [[  █████▄             ▒▒▒▒▒▒▒▒▒ ]],
+  --           [[   ▀████▀            ▒ ▒ ▒ ▒ ▒ ]],
+  --           [[                               ]],
+  --           [[                               ]],
+  --           [[                               ]],
+  --           [[                               ]],
+  --         },
+  --       },
+  --     })
+  --   end,
+  --   dependencies = { { "nvim-tree/nvim-web-devicons" } },
+  -- })
 
   if packer_bootstrap then
     require("packer").sync()
